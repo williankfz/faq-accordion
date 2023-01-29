@@ -1,0 +1,85 @@
+:root{
+  --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+  --light-grayish-blue: hsl(240, 5%, 91%);
+  --font: 'Kumbh Sans', sans-serif;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: var(--font);
+  background: linear-gradient(to right, var(--soft-violet), var(--soft-blue));
+  font-size: 1rem;
+}
+
+.container{
+  display: flex;
+  width: 900px;
+  max-width: 100%;
+  margin: 100px auto;
+  background: #fff;
+}
+
+.faq{
+  padding: 40px;
+}
+
+.faq h1{
+  margin: 20px 0px;
+}
+
+.faq-list dt, .faq-list dd{
+  color: var(--very-dark-desaturated-blue);
+  padding: 10px 0px;
+  line-height: 1.5;
+}
+
+.faq-list dt:hover{
+  color: var(--soft-red);
+  cursor: pointer;
+}
+
+.faq-list dd{
+  border-bottom: 1px solid var(--dark-grayish-blue);
+  display: none;
+}
+
+dt::after{
+  content: "⮧";
+  margin-left: 10px;
+}
+
+dt.ativo::after{
+  content: "⮥";
+  margin-left: 10px;
+  font-weight: 700;
+}
+
+.ativo{
+  display: block !important;
+  animation: show .5s forwards;
+}
+
+@keyframes show{
+  from{
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  to{
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
